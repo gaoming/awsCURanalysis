@@ -1,4 +1,5 @@
 #!/bin/bash
+CFDiscount=0.9 # Cloud Front Discount
 d=`date +%w` # Day of the week
 date1=`date -v -"$[$d+14]"d +%Y-%m-%d` # Sunday 2 weeks ago
 date2=`date -v -"$[$d+8]"d +%Y-%m-%d` # Saturday 2 weeks ago
@@ -17,11 +18,13 @@ if [[ -z "$1" ]]; then
 	perl -pi -e "s/date2/$date2/g" $filetotal 
 	perl -pi -e "s/date3/$date3/g" $filetotal 
 	perl -pi -e "s/date4/$date4/g" $filetotal 
+	perl -pi -e "s/discount/$CFDiscount/g" $filetotal
 
 	perl -pi -e "s/date1/$date1/g" $filedepart
 	perl -pi -e "s/date2/$date2/g" $filedepart
 	perl -pi -e "s/date3/$date3/g" $filedepart
 	perl -pi -e "s/date4/$date4/g" $filedepart
+	perl -pi -e "s/discount/$CFDiscount/g" $filedepart
 
 	echo
 	echo "==Company Total=="
@@ -43,6 +46,7 @@ else
 	perl -pi -e "s/date2/$date2/g" $filedepartservice
 	perl -pi -e "s/date3/$date3/g" $filedepartservice
 	perl -pi -e "s/date4/$date4/g" $filedepartservice
+	perl -pi -e "s/discount/$CFDiscount/g" $filedepartservice
 
 	echo "== Department Service =="
 	echo
