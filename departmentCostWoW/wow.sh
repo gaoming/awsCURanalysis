@@ -1,5 +1,5 @@
 #!/bin/bash
-CFDiscount=0.9 # CloudFront Discount
+CFDiscount=0.9 # Cloud Front Discount
 departmentTag=resource_tags_user_department # Tag used to identify the department or project
 d=`date +%w` # Day of the week
 date1=`date -v -"$[$d+14]"d +%Y-%m-%d` # Sunday 2 weeks ago
@@ -49,7 +49,7 @@ else
 	perl -pi -e "s/date3/$date3/g" $filedepartservice
 	perl -pi -e "s/date4/$date4/g" $filedepartservice
 	perl -pi -e "s/discount/$CFDiscount/g" $filedepartservice
-	perl -pi -e "s/departmentTag/$departmentTag/g" $filedepartervice
+	perl -pi -e "s/departmentTag/$departmentTag/g" $filedepartservice
 
 	echo "== Department Service =="
 	echo
