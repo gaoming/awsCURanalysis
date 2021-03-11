@@ -1,5 +1,5 @@
 #!/bin/bash
-CFDiscount=0.9 # Cloud Front Discount
+CFDiscount=0.9 # CloudFront Discount
 departmentTag=resource_tags_user_department # Tag used to identify the department or project
 d=`date +%w` # Day of the week
 date1=`date -v -"$[$d+14]"d +%Y-%m-%d` # Sunday 2 weeks ago
